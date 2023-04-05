@@ -14,7 +14,7 @@ def scrape():
     reddit = praw.Reddit(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, user_agent=CLIENT_USER_AGENT)
 
 
-    top_post = reddit.subreddit('Showerthoughts').top(limit=1)
+    top_post = reddit.subreddit('Showerthoughts').top(time_filter="day",limit=1)
 
     for post in top_post:
         post = post.title
