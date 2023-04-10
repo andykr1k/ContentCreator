@@ -3,8 +3,10 @@ import PostScraper
 import TextToSpeech
 import os
 ## For Andy's workstation
-os.environ["IMAGEIO_FFMPEG_EXE"] = "/opt/homebrew/bin/ffmpeg"
+# os.environ["IMAGEIO_FFMPEG_EXE"] = "/opt/homebrew/bin/ffmpeg"
 ## For Omar's workstation
+# os.environ["IMAGEMAGICK_BINARY"] = "C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\convert.exe"
+
 
 from moviepy.editor import *
 
@@ -43,3 +45,5 @@ def Generate():
     final = clip.subclip(0, audioclip.duration)
 
     final.write_videofile('./media/final_english.mp4',fps=60,codec='libx264')
+
+Generate()
