@@ -1,0 +1,7 @@
+pip install python-dotenv
+pip install praw
+pip install gTTS
+pip install playsound
+pip install asyncio
+pip install translate
+pip install moviepy

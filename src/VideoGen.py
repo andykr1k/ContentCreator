@@ -2,7 +2,10 @@ from translate import Translator
 import PostScraper
 import TextToSpeech
 import os
+## For Andy's workstation
 os.environ["IMAGEIO_FFMPEG_EXE"] = "/opt/homebrew/bin/ffmpeg"
+## For Omar's workstation
+
 from moviepy.editor import *
 
 def Generate():
