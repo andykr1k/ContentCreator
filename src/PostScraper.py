@@ -15,6 +15,5 @@ def scrape():
 
     for post in top_post:
         post = post.title
-        print(post.title)
     
     return post

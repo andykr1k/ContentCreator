@@ -1,4 +1,6 @@
 import time
+import asyncio
+from tiktokpy import TikTokPy
 
 def write():
     f = open("demofile2.txt", "a")

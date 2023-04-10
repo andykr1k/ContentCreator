@@ -24,26 +24,19 @@ def Generate():
 
     title = ImageClip("./media/reddit.png").set_start(i).set_duration(d).set_pos(("center","center")).resize(height=100)
     a.append(title)
-    i = i + 1
-    d = d/2
-
-    # audioclip = AudioFileClip("./media/english.mp3")
-    # clip = clip.set_audio(audioclip)
+    i = i + d
+    d = d/3
 
     for word in split_en:
-        txt_clip = TextClip(word, fontsize = 50, color = 'white').set_start(i).set_duration(d).set_pos(("center","center"))
+        txt_clip = TextClip(word, fontsize = 100, color = 'white').set_start(i).set_duration(d).set_pos(("center","center"))
         a.append(txt_clip)
-        i = i + 1
-
-    # im_width, im_height = txt_clip.size
-    # color_clip = ColorClip(size=(int(im_width*1.1), int(im_height*1.4)), color=(0, 255, 255)).set_start(3).set_duration(3)
-    # color_clip = color_clip.set_opacity(.6)
-    # clip_to_overlay = CompositeVideoClip([color_clip, txt_clip]).resize( (1080,1920) )
-    # clip_to_overlay = clip_to_overlay.set_position('center')
-    # video = CompositeVideoClip([clip, clip_to_overlay]).resize( (1080,1920) )
+        i = i + d
 
     clip = CompositeVideoClip(a)
-    
-    clip.write_videofile('./media/final_english.mp4',fps=60,codec='libx264')
 
-Generate()
+    audioclip = AudioFileClip("./media/english.mp3")
+    new_audioclip = CompositeAudioClip([audioclip])
+    final = clip.set_audio(new_audioclip)
+    final = clip.subclip(0, audioclip.duration)
+
+    final.write_videofile('./media/final_english.mp4',fps=60,codec='libx264')
