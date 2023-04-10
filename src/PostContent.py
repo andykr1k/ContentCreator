@@ -1,6 +1,5 @@
 import dotenv
 import os
-import lib.TikTokUploder.uploader as up
 
 def upload_to_tiktok(video_url, title, tags):
     dotenv.load_dotenv()
