@@ -23,7 +23,7 @@ def write():
     f.write("\n")
     f.write("Post Title:")
     f.write("\n")
-    f.write("Post Share ID: " + share_id)
+    f.write("Post Share ID: ")
     f.write("\n")
     f.write("Current Follower Count:")
     f.write("\n")
