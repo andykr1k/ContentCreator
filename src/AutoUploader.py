@@ -61,3 +61,19 @@ def upload_to_tiktok(vid_path):
 
     
 
+def get_google_drive_link(vid_path):
+    dotenv.load_dotenv()
+    APY_API = os.environ.get("APY_API")
+
+    payload = {'post': 'Today is a great day!', 
+            'platforms': ['tiktok'],
+            'mediaUrls': [vid_path]}
+    headers = {'Content-Type': 'application/json', 
+            'Authorization': 'Bearer ' + APY_API}
+
+    r = requests.post('https://app.ayrshare.com/api/post', 
+        json=payload, 
+        headers=headers
+        )
+    
+    print(r.json())
