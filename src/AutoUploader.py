@@ -49,7 +49,7 @@ def upload_to_tiktok(vid_path):
             'platforms': ['tiktok'],
             'mediaUrls': [vid_path]}
     headers = {'Content-Type': 'application/json', 
-            'Authorization': 'Bearer + {APY_API}'}
+            'Authorization': 'Bearer ' + APY_API}
 
     r = requests.post('https://app.ayrshare.com/api/post', 
         json=payload, 

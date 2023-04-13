@@ -45,5 +45,3 @@ def Generate():
     final = clip.subclip(0, audioclip.duration)
 
     final.write_videofile('./media/final_english.mp4',fps=60,codec='libx264')
-
-Generate()

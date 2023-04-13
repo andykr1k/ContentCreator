@@ -9,7 +9,7 @@ def write():
 
     payload = {'platforms': ['tiktok']}
     headers = {'Content-Type': 'application/json', 
-            'Authorization': 'Bearer API_KEY'}
+            'Authorization': 'Bearer {APY_API}'}
 
     r = requests.post('https://app.ayrshare.com/analytics/social', 
         json=payload, 
